@@ -7,7 +7,7 @@ desired_caps['deviceName']='127.0.0.1:62025'
 desired_caps['platforVersion']='5.1.1'
 
 
-desired_caps['app']=r'F:\APK\kaoyanbang-3.3.4.236.apk'
+
 desired_caps['appPackage']='com.tal.kaoyan'
 desired_caps['appActivity']='com.tal.kaoyan.ui.activity.SplashActivity'
 
@@ -26,14 +26,15 @@ def check_cancelBtn():
         print('no CancelBtn')
     else:cacelBtn.click()
 
-    def check_skipBtn():
-        print("check_skipBtn")
-        try:
-            skipBtn = driver.find_element_by_id('com.tal.kaoyan:id/tv_skip')
-        except NoSuchElementException:
-            print('no skipBtn')
-        else:
-            skipBtn.click()
+def check_skipBtn():
+    print("check_skipBtn")
+    try:
+        skipBtn = driver.find_element_by_id('com.tal.kaoyan:id/tv_skip')
+    except NoSuchElementException:
+        print('no skipBtn')
+    else:
+        skipBtn.click()
 
-            check_cancelBtn()
-            check_skipBtn()
+check_cancelBtn()
+check_skipBtn()
+
